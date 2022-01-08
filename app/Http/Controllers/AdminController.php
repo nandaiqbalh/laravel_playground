@@ -108,6 +108,9 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
+        // disini yang akan handle page mana yang muncul setelah logout
+        // diatur aja nanti pada function toResponse-nya
+
         return app(LogoutResponse::class);
     }
 }
