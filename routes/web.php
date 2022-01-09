@@ -26,7 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin:admin']], function ()
 
 // kata admin setelah sacntum adalah nama guard
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->name('dashboard');
 
 
