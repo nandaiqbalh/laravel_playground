@@ -104,8 +104,8 @@
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-				<img src="../images/avatar/1.jpg" alt="">
-			</a>
+				<img src="{{ Auth::user()->profile_photo_url }}" alt="">
+            </a>
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
 				 <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
