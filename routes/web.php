@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AdminProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,9 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
 
 // ADMIN ALL ROUTES
 Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+
+// admin profile
+Route::get('/admin/profile', [AdminProfileController::class, 'adminProfile'])->name('admin.profile');
 
 // kata web setelah sacntum adalah nama guard
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
