@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <h5>Current Password <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input id="current_password" type="password" name="old_password" class="form-control" > 
+                                    <input id="current_password" type="password" name="old_password" class="form-control" required> 
                                 </div>
                             </div>
                             <div class="form-group">
@@ -60,5 +60,17 @@
 
        </section>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(e){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+        reader.onload = function(e){
+            $('#showImage').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+</script>
 
 @endsection
