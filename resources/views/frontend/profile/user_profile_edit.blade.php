@@ -6,14 +6,14 @@
             <div class="row">
                 <div class="col-md-2">
                     <br>
-                    <img class="card-img-top" style="border-radius: 50%" src="{{(!empty($editData->profile_photo_path)) ? 
-                        url('upload/admin_images/'.$editData->profile_photo_path):
+                    <img class="card-img-top" style="border-radius: 50%" src="{{(!empty($user->profile_photo_path)) ? 
+                        url('upload/user_images/'.$user->profile_photo_path):
                         url('upload/no_image.png')}}" height="100%" width="100%" alt="">
 
                         <ul class="list-group list-group-flush">
                             <br>
                             <a class="btn btn-primary btn-sm btn-block" href="{{url('/')}}">Home</a>
-                            <a class="btn btn-primary btn-sm btn-block" href="{{route('user.profile.edit')}}">Profile Edit</a>
+                            <a class="btn btn-primary btn-sm btn-block" href="{{route('user.profile.edit')}}">Profile Update</a>
                             <a class="btn btn-primary btn-sm btn-block" href="">Change Password</a>
                             <a class="btn btn-danger btn-sm btn-block" href="{{route('user.logout')}}">Log Out</a>
 
@@ -35,22 +35,22 @@
                             </div>
                            </div>
                         <div class="card-body">
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('user.profile.update')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Name</label>
+                                    <label for="">Name<span>*</span></label>
                                     <input name="name" id="name" type="text" class="form-control" value="{{Auth::user()->name}}" >   
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Email</label>
+                                    <label for="">Email<span>*</span></label>
                                     <input name="email" id="email" type="email" class="form-control" value="{{Auth::user()->email}}" >   
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Phone</label>
+                                    <label for="">Phone<span>*</span></label>
                                     <input name="phone" id="phone" type="text" class="form-control" value="{{Auth::user()->phone}}" >   
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Profile Image</label>
+                                    <label for="">Profile Image<span>*</span></label>
                                     <input name="profile_photo_path" id="profile_photo_path" type="file" class="form-control" >   
                                 </div>
                                 <div class="form-group">

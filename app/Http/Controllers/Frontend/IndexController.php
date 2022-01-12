@@ -31,4 +31,28 @@ class IndexController extends Controller
 
         return view('frontend.profile.user_profile_edit', compact('user'));
     }
+
+    public function userProfileUpdate(Request $request)
+    {
+        $data = User::find(Auth::user()->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+
+        if ($request->file('profile_photo_path')) {
+            $file = $request->file('profile_photo_path');
+            @unlink(public_path('upload/user_images/' . $data->profile_photo_path));
+            $fileName = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/user_images'), $fileName);
+            $data['profile_photo_path'] = $fileName;
+        }
+
+        $data->save();
+
+        $notification = array(
+            'message' => 'Succeeded to Update User Profile',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('dashboard')->with($notification);
+    }
 }

@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-md-2">
                     <br>
-                    <img class="card-img-top" style="border-radius: 50%" src="{{(!empty($editData->profile_photo_path)) ? 
-                        url('upload/admin_images/'.$editData->profile_photo_path):
-                        url('upload/no_image.png')}}" height="100%" width="100%" alt="">
-
+                    <img class="card-img-top" style="border-radius: 50%" src="{{(!empty($user->profile_photo_path)) ? 
+                        url('upload/user_images/'.$user->profile_photo_path):
+                        url('upload/no_image.jpg')}}" height="100%" width="100%" alt="">
+                        
                         <ul class="list-group list-group-flush">
                             <br>
                             <a class="btn btn-primary btn-sm btn-block" href="{{url('/')}}">Home</a>
