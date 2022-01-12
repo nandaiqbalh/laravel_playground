@@ -25,12 +25,45 @@
                     <div class="card">
                         <h3 class="text-center">
                             <span class="text-danger">Hi, </span> <strong> {{Auth::user() -> name}}!</strong>
-                            Welcome to WarungKu!
+                            Welcome to SiapSedia Ecommerce!
                         </h3>
                     </div>
 
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2> User Profile</h2>
+                            </div>
+                           </div>
+                        <div class="card-body">
+                            <form action="">
+
+                          <div class="mb-3">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" value="{{Auth::user()->name}}" readonly>   
+                          </div>
+                          <div class="mb-3">
+                            <label for="">Email</label>
+                            <input type="text" class="form-control" value="{{Auth::user()->email}}" readonly>   
+                          </div>
+                          <div class="mb-3">
+                            <label for="">Phone</label>
+                            <input type="text" class="form-control" value="{{Auth::user()->phone}}" readonly>   
+                          </div>
+                        </form>
+
                 </div>
+
+                <div class="col-md-2">
+
+                </div>
+
             </div>
         </div>
     </div>
+</div>
+@include('frontend.body.brand')
+
+</div>
     @endsection 
