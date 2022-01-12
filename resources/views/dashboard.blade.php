@@ -13,7 +13,7 @@
                         <ul class="list-group list-group-flush">
                             <br>
                             <a class="btn btn-primary btn-sm btn-block" href="{{url('/')}}">Home</a>
-                            <a class="btn btn-primary btn-sm btn-block" href="">Profile Update</a>
+                            <a class="btn btn-primary btn-sm btn-block" href="{{route('user.profile.edit')}}">Profile Update</a>
                             <a class="btn btn-primary btn-sm btn-block" href="">Change Password</a>
                             <a class="btn btn-danger btn-sm btn-block" href="{{route('user.logout')}}">Log Out</a>
                         </ul>
