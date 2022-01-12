@@ -54,3 +54,4 @@ Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function 
 
 // index
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/user/logout', [IndexController::class, 'userLogout'])->name('user.logout');
