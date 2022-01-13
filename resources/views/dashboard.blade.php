@@ -8,13 +8,13 @@
                     <br>
                     <img class="card-img-top" style="border-radius: 50%" src="{{(!empty($user->profile_photo_path)) ? 
                         url('upload/user_images/'.$user->profile_photo_path):
-                        url('upload/no_image.jpg')}}" height="100%" width="100%" alt="">
+                        url('upload/no_image.png')}}" height="100%" width="100%" alt="">
                         
                         <ul class="list-group list-group-flush">
                             <br>
                             <a class="btn btn-primary btn-sm btn-block" href="{{url('/')}}">Home</a>
                             <a class="btn btn-primary btn-sm btn-block" href="{{route('user.profile.edit')}}">Profile Update</a>
-                            <a class="btn btn-primary btn-sm btn-block" href="">Change Password</a>
+                            <a class="btn btn-primary btn-sm btn-block" href="{{route('user.password.change')}}">Change Password</a>
                             <a class="btn btn-danger btn-sm btn-block" href="{{route('user.logout')}}">Log Out</a>
                         </ul>
                 </div>
@@ -44,10 +44,12 @@
                             <input type="text" class="form-control" value="{{Auth::user()->name}}" readonly>   
                           </div>
                           <div class="mb-3">
+                              <br>
                             <label for="">Email</label>
                             <input type="text" class="form-control" value="{{Auth::user()->email}}" readonly>   
                           </div>
                           <div class="mb-3">
+                              <br>
                             <label for="">Phone</label>
                             <input type="text" class="form-control" value="{{Auth::user()->phone}}" readonly>   
                           </div>
