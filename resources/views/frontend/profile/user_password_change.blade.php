@@ -34,7 +34,8 @@
                            </div>
                         <div class="card-body">
 
-                            <form action="">
+                        <form method="POST" action="{{route('user.password.update')}}">
+                        @csrf
 
                          <div class="form-group">
                             <label for="">Current Password<span class="text-danger">*</span></label>

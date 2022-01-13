@@ -64,3 +64,5 @@ Route::post('/user/profile/update', [IndexController::class, 'userProfileUpdate'
 
 // user password
 Route::get('/user/password/change', [IndexController::class, 'userPasswordChange'])->name('user.password.change');
+
+Route::post('/user/password/update', [IndexController::class, 'userPasswordUpdate'])->name('user.password.update');
